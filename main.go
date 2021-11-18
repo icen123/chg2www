@@ -29,4 +29,11 @@ func main() {
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 	}
+
+	command = "chmod g+w " + needChangePath + " -R"
+	cmd = exec.Command("/bin/bash", "-c", command)
+	_, err = cmd.Output()
+	if err != nil {
+		fmt.Printf("err: %v\n", err)
+	}
 }
